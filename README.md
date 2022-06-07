@@ -1,7 +1,7 @@
 <div align="center" id="top"> 
   <img src="go.jpeg" alt="Todos Api" />
 </div>
-<h1 align="center">Todos List API</h1>
+<h1 align="center">Todo List API</h1>
 <p align="center">
   <img alt="Tool" src="https://badges.aleen42.com/src/docker.svg">
   <img alt="Tool" src="https://badges.aleen42.com/src/golang.svg">
@@ -33,7 +33,7 @@ This API is a simple todo list. It is a RESTful API that allows you to create, r
 ## :sparkles: Features ##
 
 :heavy_check_mark: List todos\
-:heavy_check_mark: Update todos
+:heavy_check_mark: Update todo status
 
 ## :rocket: Technologies ##
 
@@ -43,7 +43,7 @@ The following tools were used in this project:
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Go](https://golang.org) installed.
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [Docker](https://www.docker.com/), and [Go](https://golang.org) installed.
 
 ## :checkered_flag: Starting ##
 
@@ -102,9 +102,7 @@ curl -X PUT -H 'content-type: application/json' --data '{"id": "1", "name": "Che
 curl http://localhost:8080/todos/2
 ```
 
-- The server will initialize in the `http://localhost:8080` URL.
-
-## Mutli-Stage Docker image: ##
+## 🐳 Mutli-Stage Docker image: ##
 
 You can reduce the size of the Docker image from 300MB to 12MB by using multi-stage containerization.
 
@@ -114,9 +112,8 @@ You can reduce the size of the Docker image from 300MB to 12MB by using multi-st
 
 This project is under license from Apache 2.0. For more details, see the [LICENSE](LICENSE) file.
 
-
 Made with :heart: by <a href="https://github.com/devenes" target="_blank">devenes</a>
 
 &#xa0;
 
-<a href="#top">Back to top</a>
+<a href="#top">⬆️ Back to top</a>
