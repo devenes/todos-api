@@ -21,7 +21,7 @@ on:
     - cron: '16 18 * * 4'
 
 jobs:
-  analyze:
+  Analyze:
     name: Analyze
     runs-on: ubuntu-latest
     permissions:
@@ -30,7 +30,7 @@ jobs:
       security-events: write
 
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         language: [ 'go' ]
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
