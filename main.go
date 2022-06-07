@@ -15,7 +15,7 @@ var (
 
 type todo struct {
 	ID   string `json:"id"`
-	Name string `json:"name"`
+	Title string `json:"title"`
 }
 
 type datastore struct {
@@ -117,9 +117,9 @@ func main() {
 	todoH := &objectHandler{
 		store: &datastore{
 			m: map[string]todo{
-				"1": {ID: "1", Name: "watch go programming tutorials"},
-				"2": {ID: "2", Name: "learn ansible and docker"},
-				"3": {ID: "3", Name: "read go programming books"},
+				"1": {ID: "1", Title: "watch go programming tutorials"},
+				"2": {ID: "2", Title: "learn ansible and docker"},
+				"3": {ID: "3", Title: "read go programming books"},
 			},
 			RWMutex: &sync.RWMutex{},
 		},
