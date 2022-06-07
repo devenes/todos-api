@@ -3,12 +3,13 @@
 </div>
 <h1 align="center">Todo List API</h1>
 <p align="center">
+  <img alt="Go Build" src="https://github.com/devenes/todos-api/actions/workflows/go_build.yml/badge.svg" />
   <img alt="Tool" src="https://badges.aleen42.com/src/docker.svg">
   <img alt="Tool" src="https://badges.aleen42.com/src/golang.svg">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/devenes/todos-api?color=56BEB8">
   <img alt="Github language count" src="https://img.shields.io/github/languages/count/devenes/todos-api?color=purple">
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/devenes/todos-api?color=orange">
-  <img alt="License" src="https://img.shields.io/github/license/devenes/todos-api?color=yellow">
+  <img alt="License" src="https://img.shields.io/github/license/devenes/todos-api?color=red">
   <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/devenes/todos-api?color=56BEB8" /> -->
   <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/devenes/todos-api?color=56BEB8" /> -->
   <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/devenes/todos-api?color=56BEB8" /> -->
@@ -23,8 +24,6 @@
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
   <a href="https://github.com/devenes" target="_blank">Author</a>
 </p>
-
-<br>
 
 ## :dart: About ##
 
