@@ -1,11 +1,14 @@
 <div align="center" id="top"> 
   <img src="go.jpeg" alt="Todos Api" />
 </div>
+
 <h1 align="center">Todo List API</h1>
+
 <p align="center">
   <img alt="Go Build" src="https://github.com/devenes/todos-api/actions/workflows/go_build.yml/badge.svg" />
   <img alt="Tool" src="https://badges.aleen42.com/src/docker.svg">
   <img alt="Tool" src="https://badges.aleen42.com/src/golang.svg">
+  <img alt="Tool" src="https://badges.aleen42.com/src/github.svg">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/devenes/todos-api?color=56BEB8">
   <img alt="Github language count" src="https://img.shields.io/github/languages/count/devenes/todos-api?color=purple">
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/devenes/todos-api?color=orange">
@@ -91,12 +94,12 @@ curl http://localhost:8080/todos/1
 
 - Create a new todo with the following command:
 ```bash
-curl -X POST -H 'content-type: application/json' --data '{"id": "4", "name": "Buy milk"}' http://localhost:8080/todos
+curl -X POST -H 'content-type: application/json' --data '{"id": "4", "title": "Buy milk"}' http://localhost:8080/todos
 ```
 
 - Update the first todo with the following command:
 ```bash
-curl -X PUT -H 'content-type: application/json' --data '{"id": "1", "name": "Check the mailbox"}' http://localhost:8080/todos
+curl -X POST -H 'content-type: application/json' --data '{"id": "1", "title": "Check the mailbox"}' http://localhost:8080/todos
 ```
 
 - Get the second todo with the following command:
@@ -104,9 +107,9 @@ curl -X PUT -H 'content-type: application/json' --data '{"id": "1", "name": "Che
 curl http://localhost:8080/todos/2
 ```
 
-## 🐳 Mutli-Stage Docker image: ##
+## 🐳 Mutli-Stage Containerization ##
 
-You can reduce the size of the Docker image from 300MB to 12MB by using multi-stage containerization.
+You can reduce the size of the Docker image from 300MB to 12MB by using multi-stage containerization. Check the [Dockerfile](Dockerfile) to see how it works and look at the latest image created with alpine.
 
 ![Docker image](image.png)
 
