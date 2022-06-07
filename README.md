@@ -1,30 +1,18 @@
 <div align="center" id="top"> 
   <img src="https://wallpaperaccess.com/full/4482740.jpg" alt="Todos Api" />
-
-  &#xa0;
-
-  <!-- <a href="https://todosapi.netlify.app">Demo</a> -->
 </div>
-
 <h1 align="center">Todos List API</h1>
-
 <p align="center">
+  <img alt="Tool" src="https://badges.aleen42.com/src/docker.svg">
+  <img alt="Tool" src="https://badges.aleen42.com/src/golang.svg">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/devenes/todos-api?color=56BEB8">
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/devenes/todos-api?color=56BEB8">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/devenes/todos-api?color=56BEB8">
-  <img alt="License" src="https://img.shields.io/github/license/devenes/todos-api?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/devenes/todos-api?color=purple">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/devenes/todos-api?color=orange">
+  <img alt="License" src="https://img.shields.io/github/license/devenes/todos-api?color=yellow">
   <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/devenes/todos-api?color=56BEB8" /> -->
   <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/devenes/todos-api?color=56BEB8" /> -->
   <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/devenes/todos-api?color=56BEB8" /> -->
 </p>
-
-<!-- Status -->
-
-<!-- <h4 align="center"> 
-	🚧  Todos Api 🚀 Under construction...  🚧
-</h4> 
-
-<hr> -->
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
@@ -40,13 +28,12 @@
 
 ## :dart: About ##
 
-Describe your project
+This API is a simple todo list. It is a RESTful API that allows you to create, read, update and delete todos. 
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: List todos\
+:heavy_check_mark: Update todos
 
 ## :rocket: Technologies ##
 
@@ -60,13 +47,12 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ## :checkered_flag: Starting ##
 
-- Clone this project
-
+- Clone the project
 ```bash
 git clone https://github.com/devenes/todos-api
 ```
 
-- Go to the project directory
+- Go to the project directory:
 ```bash
 cd todos-api
 ```
@@ -76,8 +62,32 @@ cd todos-api
 go run main.go
 ```
 
-- The server will initialize in the `http://localhost:8080` URL.
+- List todos with the following command:
+```bash
+curl http://localhost:8080/todos
+```
 
+- Get the first todo with the following command:
+```bash
+curl http://localhost:8080/todos/1
+```
+
+- Create a new todo with the following command:
+```bash
+curl -X POST -H 'content-type: application/json' --data '{"id": "4", "name": "Buy milk"}' http://localhost:8080/todos
+```
+
+- Update the first todo with the following command:
+```bash
+curl -X PUT -H 'content-type: application/json' --data '{"id": "1", "name": "Check the mailbox"}' http://localhost:8080/todos
+```
+
+- Get the second todo with the following command:
+```bash
+curl http://localhost:8080/todos/2
+```
+
+- The server will initialize in the `http://localhost:8080` URL.
 
 ## :memo: License ##
 
