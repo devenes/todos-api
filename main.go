@@ -127,5 +127,10 @@ func main() {
 	mux.Handle("/todos", todoH)
 	mux.Handle("/todos/", todoH)
 
-	http.ListenAndServe("localhost:8080", mux)
+
+ 	// Set up a server listening on port 8080 with the mux as the handler
+	// If you set on localhost:8080, you can access the server from your browser locally
+	// but your container will not be able to make it accessible from outside
+	// http.ListenAndServe("0.0.0.0:8080", mux)
+	http.ListenAndServe(":8080", mux)
 }
