@@ -25,7 +25,7 @@
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#_Mutli-Stage-Containerization">Containerization</a> &#xa0; | &#xa0;
+  <a href="#-Multi-Stage-Containerization">Containerization</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
   <a href="https://github.com/devenes" target="_blank">Author</a>
 </p>
@@ -109,7 +109,7 @@ curl -X POST -H 'content-type: application/json' --data '{"id": "1", "title": "C
 curl http://localhost:8080/todos/2
 ```
 
-## 🐳  Mutli-Stage Containerization ##
+## 🐳  Multi-Stage Containerization ##
 
 You can reduce the size of the Docker image from 300MB to 12MB by using multi-stage containerization. Check the [Dockerfile](Dockerfile) to see how it works and look at the latest image created with alpine.
 
