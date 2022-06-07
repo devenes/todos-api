@@ -39,7 +39,10 @@ This API is a simple todo list. It is a RESTful API that allows you to create, r
 
 The following tools were used in this project:
 
-- [Go](https://golang.org/): The language used in this project.
+- [Go](https://golang.org/): The language used in this project
+- [Docker](https://www.docker.com/): The containerization tool used in this project
+- [GitHub](https://www.github.com/): The source control tool used in this project
+- [GitHub Actions](https://github.com/actions/): The continuous integration tool used in this project
 
 ## :white_check_mark: Requirements ##
 
