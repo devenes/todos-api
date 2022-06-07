@@ -62,6 +62,21 @@ cd todos-api
 go run main.go
 ```
 
+- You can also run the server in the background:
+```bash
+go run main.go &
+```
+
+- Build the Docker image:
+```bash
+docker build -t devenes/todos-api:1 ./
+```
+
+- You can also run the server in a Docker container:
+```bash
+docker run -p 8080:8080 -d devenes/todos-api:1
+```
+
 - List todos with the following command:
 ```bash
 curl http://localhost:8080/todos
@@ -88,6 +103,12 @@ curl http://localhost:8080/todos/2
 ```
 
 - The server will initialize in the `http://localhost:8080` URL.
+
+## Mutli-Stage Docker image: ##
+
+You can reduce the size of the Docker image from 300MB to 12MB by using multi-stage containerization.
+
+![Docker image](image.png)
 
 ## :memo: License ##
 
