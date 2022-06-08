@@ -114,7 +114,7 @@ curl http://localhost:8080/todos/2
 
 You can reduce the size of the Docker image from 300MB to 12MB by using multi-stage containerization. Check the [Dockerfile](Dockerfile) to see how it works and look at the latest image created with alpine.
 
-![Docker image](image.png)
+![Docker image](images.png)
 
 ## :memo: License ##
 
