@@ -37,7 +37,8 @@ This API is a simple todo list. It is a RESTful API that allows you to create, r
 ## :sparkles: Features ##
 
 :heavy_check_mark: List todos\
-:heavy_check_mark: Update todo status
+:heavy_check_mark: Get todo status\
+:heavy_check_mark: Create a new todo object
 
 ## :rocket: Technologies ##
 
