@@ -11,10 +11,11 @@ var (
 	listTodosRe   = regexp.MustCompile(`^\/todos[\/]*$`)
 	getTodosRe    = regexp.MustCompile(`^\/todos\/(\d+)$`)
 	createTodosRe = regexp.MustCompile(`^\/todos[\/]*$`)
+	deleteTodosRe = regexp.MustCompile(`^\/todos\/(\d+)$`)
 )
 
 type todo struct {
-	ID   string `json:"id"`
+	ID    string `json:"id"`
 	Title string `json:"title"`
 }
 
@@ -38,6 +39,9 @@ func (h *objectHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	case r.Method == http.MethodPost && createTodosRe.MatchString(r.URL.Path):
 		h.Create(w, r)
+		return
+	case r.Method == http.MethodDelete && deleteTodosRe.MatchString(r.URL.Path):
+		h.Delete(w, r)
 		return
 	default:
 		notFound(w, r)
@@ -84,6 +88,7 @@ func (h *objectHandler) Get(w http.ResponseWriter, r *http.Request) {
 	w.Write(jsonBytes)
 }
 
+// Create a new todo
 func (h *objectHandler) Create(w http.ResponseWriter, r *http.Request) {
 	var u todo
 	if err := json.NewDecoder(r.Body).Decode(&u); err != nil {
@@ -100,6 +105,20 @@ func (h *objectHandler) Create(w http.ResponseWriter, r *http.Request) {
 	}
 	w.WriteHeader(http.StatusOK)
 	w.Write(jsonBytes)
+}
+
+// Delete todo with id
+func (h *objectHandler) Delete(w http.ResponseWriter, r *http.Request) {
+	matches := deleteTodosRe.FindStringSubmatch(r.URL.Path)
+	if len(matches) < 2 {
+		notFound(w, r)
+		return
+	}
+	h.store.Lock()
+	delete(h.store.m, matches[1])
+	h.store.Unlock()
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("Todo deleted"))
 }
 
 func internalServerError(w http.ResponseWriter, r *http.Request) {
@@ -127,8 +146,7 @@ func main() {
 	mux.Handle("/todos", todoH)
 	mux.Handle("/todos/", todoH)
 
-
- 	// Set up a server listening on port 8080 with the mux as the handler
+	// Set up a server listening on port 8080 with the mux as the handler
 	// If you set on localhost:8080, you can access the server from your browser locally
 	// but your container will not be able to make it accessible from outside
 	// http.ListenAndServe("0.0.0.0:8080", mux)
