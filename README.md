@@ -38,7 +38,8 @@ This API is a simple todo list. It is a RESTful API that allows you to create, r
 
 :heavy_check_mark: List todos\
 :heavy_check_mark: Get todo status\
-:heavy_check_mark: Create a new todo object
+:heavy_check_mark: Create a new todo object\
+:heavy_check_mark: Delete a todo object
 
 ## :rocket: Technologies ##
 
@@ -105,6 +106,11 @@ curl -X POST -H 'content-type: application/json' --data '{"id": "4", "title": "B
 curl -X POST -H 'content-type: application/json' --data '{"id": "1", "title": "Check the mailbox"}' http://localhost:8080/todos
 ```
 
+- Delete the first todo with the following command:
+```bash
+curl -X DELETE http://localhost:8080/todos/1
+```
+
 - Get the second todo with the following command:
 ```bash
 curl http://localhost:8080/todos/2
@@ -112,7 +118,7 @@ curl http://localhost:8080/todos/2
 
 ## 🐳  Multi-Stage Containerization ##
 
-You can reduce the size of the Docker image from 300MB to 12MB by using multi-stage containerization. Check the [Dockerfile](Dockerfile) to see how it works and look at the latest image created with alpine.
+You can reduce the size of the Docker image from 301MB to 12MB by using multi-stage containerization. Check the [Dockerfile](Dockerfile) to see how it works and look at the latest image created with alpine.
 
 ![Docker image](images.png)
 
