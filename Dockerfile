@@ -2,18 +2,15 @@ FROM golang:1.16-alpine as builder
 
 WORKDIR /app
 
-COPY main.go ./
-
-COPY go.mod ./
+COPY main.go ./ \
+    go.mod ./
 
 RUN go build -o todo
 
 FROM alpine
 
-WORKDIR /app
-
 COPY --from=builder /app /app
 
-EXPOSE 8080 8080
+EXPOSE 8080/tcp
 
-ENTRYPOINT ["/app/todo"]
+CMD ["/app/todo"]
