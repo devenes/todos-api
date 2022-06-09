@@ -97,6 +97,12 @@ docker build -t devenes/todos-api:1 ./
 docker run -p 8080:8080 -d devenes/todos-api:1
 ```
 
+- See the output:
+
+```bash
+docker build -t devenes/todos-api:1 ./ && docker run -p 8080:8080 -d devenes/todos-api:1 && explorer "http://localhost:8080/todos"
+```
+
 - List todos with the following command:
 
 ```bash
@@ -131,6 +137,12 @@ curl -X DELETE http://localhost:8080/todos/1
 
 ```bash
 curl http://localhost:8080/todos/2
+```
+
+- Stop and remove all Docker containers and images:
+
+```bash
+docker stop $(docker ps -aq) && docker rm $(docker ps -aq) && docker rmi $(docker images -q)
 ```
 
 ## 🐳 Multi-Stage Containerization
